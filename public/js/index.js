@@ -1,3 +1,9 @@
+
+  
+
+
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyANc8RwR1HN9DK7LpX_n1tE1RRcEzpjvn8",
     authDomain: "zeneri.firebaseapp.com",
@@ -125,10 +131,32 @@ wheel.navItems[3].navigateFunction = function(){
 
 
 }
-
+const entrydo = function(){
+    var aaj = new Date();
+    var mv = document.querySelector('#entry').value;
+    var ab = "";
+    var ti = 0;
+    var m = aaj.getMonth()+1;
+    if(aaj.getHours()>=12)
+    {
+        ti=aaj.getHours()-12;
+        ab="PM"
+    }
+    else
+    {
+        ti=aaj.getHours();
+        ab="AM"
+    }
+    db.collection(localStorage.getItem("currentUser")).add({
+        content: mv,
+        date: `${aaj.getDate()+"/"+m+"/"+aaj.getFullYear()}`,
+        time: `${ti+":"+aaj.getMinutes()+" "+ ab}`
+    })
+}
 const read = async function(){
     console.log("OP")
-    await db.collection("abc@test.com").orderBy("date","asc").onSnapshot(function(querySnapshot){
+    document.querySelector("#carouselExampleIndicators").classList.remove('hide')
+    await db.collection(localStorage.getItem("currentUser")).orderBy("date","asc").onSnapshot(function(querySnapshot){
         querySnapshot.docChanges().forEach(function(change){
             if(change.type=="added"){
                 document.querySelector('.carousel-inner').innerHTML += `<div class='carousel-item'><div class='paper'><div class='pattern'><div class='content'>${change.doc.data().content}</div></div></div></div>`
@@ -139,3 +167,24 @@ const read = async function(){
    document.getElementById("bt1").classList.add("hide");
 }
 document.getElementById("username").innerHTML = localStorage.getItem("currUserName");
+document.getElementById("calendar").evoCalendar({
+    theme: "Orange Coral",
+    todayHighlight: true,
+
+})
+document.getElementById("#btn").addEventListener("click",function() {
+    console.log("HARman badha noob")
+    var today = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    document.getElementById("calendar").evoCalendar(
+        'addCalendarEvent', {
+            id: 'exer', // Event's ID (required)
+            name: "MEditation", // Event name (required)
+            date: `${months[today.getMonth()]}/${today.getDate()}/${today.getFullYear()}`, // Event date (required)
+            type: "holiday", // Event type (required)
+            everyYear: true // Same event every year (optional)
+        }
+
+    );
+console.log("Harman noob");
+    })
