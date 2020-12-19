@@ -322,7 +322,7 @@ footer {
     background-color: #555;
     color: #ddd;
     padding: 5px;
-   
+   font-size: 30px;
 }
 
 #wheelDiv {
@@ -999,7 +999,8 @@ nav ul li a {
 }
 
 .vedios {
-    background-color: #9f5f805e;
+	background-color: #9f5f805e;
+	padding-bottom: 5%;
 }
 
 .vedios .card {
