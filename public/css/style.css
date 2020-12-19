@@ -37,6 +37,110 @@ img{max-width:100%;}
 	background: url("https://cdn.discordapp.com/attachments/788738430888181823/789750134640082944/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg")  no-repeat center center fixed;
 	background-size: cover;
 }
+.trans
+{
+	transition: all linear;
+	animation: rot 2s linear;
+	animation-iteration-count: 2;
+
+}
+@keyframes rot{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+.top-head
+{
+	background: url("https://images.unsplash.com/photo-1523882505971-5c29b55b695c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")  no-repeat center center fixed;
+	background-size: cover;
+	height: 600px;
+	
+}
+.col-md-6
+{
+	justify-content: center;
+	text-align: -webkit-center;
+}
+.bot-head .row
+{
+	margin-top: 3%;
+}
+.bot-head
+{
+	padding: 2%;
+}
+.c4
+{
+	font-family: 'Roboto';
+	font-size: 34px;
+	padding-top: 3%
+}
+#photo1
+{
+	height: 350px;
+	background: url("https://static.medmonks.com/home/img/doctors/1548737264.jpeg") ;
+	background-size: cover;
+	border-radius: 10px;
+}
+#photo2
+{
+	height: 350px;
+	background: url("https://static.medmonks.com/home/img/doctors/1548678293.jpeg") ;
+	background-size: cover;
+	border-radius: 10px;
+}
+.expertinfo
+{
+	background: #ddd;
+	width: 70%;
+	justify-content: center;
+	height: 500px;
+	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+.mid-head
+{
+	background-color: #E7E7E7;
+            font-family: Helvetica, Arial, sans-serif
+}
+footer {
+	text-align: center;
+	background-color: #555;
+	color: #ddd;
+	padding: 5px;
+	margin-top: 50px;
+}
+
+	
+#wheelDiv {
+	height: 400px;
+	width: 400px;
+	margin: auto;
+}
+
+#wheelDiv>svg {
+	height: 100%;
+	width: 100%;
+}
+
+@media (max-width: 600px) {
+	#wheelDiv {
+		height: 350px;
+		width: 350px;
+	}
+}
+
+@media (max-width: 400px) {
+	#wheelDiv {
+		height: 300px;
+		width: 300px;
+	}
+}
+
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Oswald', sans-serif;
 
@@ -256,11 +360,58 @@ ul{
    
 	margin-right: 7%;
   }
-  .navbar
+  .c1
   {
-	background: var(--main-bg);
-	
+	  font-size: 18px;
+	  color: #222;
+	  text-align: justify;
+	  padding: 2%;
+	  font-family: cursive;
   }
+  .c2
+  {
+	  font-family: cursive;
+	  font-size: 40px;
+	  text-align: center;
+	  padding-top:3% ;
+  }
+  .c3
+  {
+	  font-family: cursive;
+	  font-size: 50px;
+	  text-align: center;
+	  margin: 0% auto;
+  }
+  .mid-head
+  {
+	  padding: 2% !important;
+  }
+  .bot-head
+  {
+	  background: #888;
+  }
+  #btnop
+{
+	margin-top: 0;
+    border-radius: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+	font-family: cursive;
+	
+}
+  #welcome
+  {
+	  font-size: 40px;
+	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  #wquote
+  {
+	  text-align: center;
+	  color: #114;
+	  font-size: 50px;
+	 filter: opacity(0.7);
+	  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	}
   /* Google font */
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 #journalbody {
@@ -289,7 +440,28 @@ ul{
   left: 40px;
   background-color: rgba(255,0,0,0.6);
 }
-
+.row
+{
+	margin: 0px;
+	
+}
+.fa{
+	font-size: 30px !important;
+	padding: 1%;
+}
+#username
+{
+	color: #444040;
+}
+.fa-user
+{
+	right: 0;
+	position: absolute;
+}
+#homeBody
+{
+	overflow-x: hidden;
+}
 /* styling blue horizontal lines */
 .pattern {
   height: 100%;

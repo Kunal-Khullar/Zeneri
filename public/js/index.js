@@ -89,8 +89,44 @@ const login = async function(){
         alert("Please enter all the fields")
     }
 }
-var but = document.getElementById("bt1");
-but.addEventListener("click",async function(){
+let j;
+const wheelf = function () {
+    document.querySelector("#ptanhi").classList.remove("hide")
+    document.querySelector('#wheelDiv').classList.remove("hide")
+    var i=0;
+    var wheel = new wheelnav("wheelDiv");
+    document.querySelector('#menudiv').classList.add('hide')
+    
+    //This is the place for code snippets from the documentation -> http://wheelnavjs.softwaretailoring.net/documentation.html
+    var colorString= ["#3acbd9","#e1e228","#ee665e","#3bb273"];
+wheel = new wheelnav('wheelDiv');
+
+wheel.spreaderTitleFont = '100 8px Roboto';
+wheel.colors = colorpalette.gamebookers;
+
+wheel.slicePathFunction = slicePath().PieSlice;
+wheel.clickModeRotate = true;
+wheel.createWheel(['Meditation','Your Journal','Articles','Talk to an Expert']);
+wheel.navItems[0].navigateFunction = function(){
+    location.href = 'meditation.html';
+}
+wheel.navItems[1].navigateFunction = function(){
+    location.href = 'journal.html';
+}
+wheel.navItems[2].navigateFunction = function(){
+    location.href = 'article.html';
+}
+wheel.navItems[3].navigateFunction = function(){
+    location.href = '#experts';
+}
+    //alert($( this ).css( "transform" ));
+  document.querySelector('#wheelDiv').classList.add("animate__animated");
+  document.querySelector('#wheelDiv').classList.add("animate__rotateIn");
+
+
+}
+
+const read = async function(){
     console.log("OP")
     await db.collection("abc@test.com").orderBy("date","asc").onSnapshot(function(querySnapshot){
         querySnapshot.docChanges().forEach(function(change){
@@ -100,10 +136,6 @@ but.addEventListener("click",async function(){
             }
         })
     })
-   
-})
+   document.getElementById("bt1").classList.add("hide");
+}
 document.getElementById("username").innerHTML = localStorage.getItem("currUserName");
-
-// const read = async function() {
-    
-// }

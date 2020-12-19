@@ -11,19 +11,88 @@
 
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script  src="js/raphael.min.js"></script>
+    <script  src="js/raphael.icons.min.js"></script>
+    <script  src="js/wheelnav.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
-</head>
-<body>
+   
+
+  
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
     
-    <h1>WELCOME BACK <span id="username"></span></h1>
+</head>
+<body id="homeBody">
+    
+    <div class="top-head">
+        <div class="row">
+            <i class="fa fa-eye"></i>
+            <i class="fa fa-user"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInDownBig" id="welcome">Welcome Back <span id="username">Jonathan</span></h1>
+        <h4 class="animate__animated animate__fadeIn animate__delay-2s" id="wquote">Every day is a fresh start!</h4>
+    </div>
+    <div class="mid-head">
+        <div id="menudiv">
+            <h2 class="c2">About Us</h2>
+            <p class="c1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <button type="button" id="btnop" onclick="wheelf()">DETOX</button>
+        </div>
+        <div class="div2 hide" id="ptanhi">
+            <p class="c2">What would you like to do?</p>
+           <div id="wheelDiv" class="hide">
+
+        </div>
+        </div>
+        
+        
+    </div>
+    <div class="bot-head" id="experts">
+        <h1 class="c3">Talk To An Expert</h1>
+        <div class="row">
+            <div class="col-md-6">
+                    <div class="expertinfo">
+                        <div id="photo1"></div>
+                        <div class="data">
+                            <p class="c4"> Dr Sameer Malhotra </p>
+                            <button type="button" id="exp1">Mail</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <div class="expertinfo">
+                    <div id="photo2"></div>
+                    <div class="data">
+                        <p class="c4"> Dr Manish Jain </p>
+                        <button type="button" id="exp1">Mail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; Team Passione</a></p>
+    </footer>
 </body>
+
 <script src="js/index.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </html>
