@@ -434,21 +434,20 @@ ul{
 	text-align: center;
 	padding: 3%;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
-
-.calendarbox {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+.cal{
+	padding: 2%;
+	background: #123;
 }
-
+.saman{
+	margin-top: 13%;
+}
 #calendar {
-    width: 96%;
-    position: absolute;
+	padding: 2%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 20%)
@@ -520,6 +519,7 @@ ul{
 .readjournal
 {
 	background: #555;
+	padding: 2%;
 }
 textarea
 {

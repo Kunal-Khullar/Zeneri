@@ -156,6 +156,8 @@ const entrydo = function(){
 const read = async function(){
     console.log("OP")
     document.querySelector("#carouselExampleIndicators").classList.remove('hide')
+    document.querySelector("#car").classList.add('animate__animated')
+    document.querySelector("#car").classList.add('animate__fadeIn')
     await db.collection(localStorage.getItem("currentUser")).orderBy("date","asc").onSnapshot(function(querySnapshot){
         querySnapshot.docChanges().forEach(function(change){
             if(change.type=="added"){
@@ -166,25 +168,44 @@ const read = async function(){
     })
    document.getElementById("bt1").classList.add("hide");
 }
-document.getElementById("username").innerHTML = localStorage.getItem("currUserName");
-document.getElementById("calendar").evoCalendar({
-    theme: "Orange Coral",
+
+$('#calendar').evoCalendar({
+    theme: "Royal Navy",
     todayHighlight: true,
 
 })
-document.getElementById("#btn").addEventListener("click",function() {
-    console.log("HARman badha noob")
+    const addevent = function() {
+ 
     var today = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    document.getElementById("calendar").evoCalendar(
-        'addCalendarEvent', {
-            id: 'exer', // Event's ID (required)
-            name: "MEditation", // Event name (required)
+    db.collection(localStorage.getItem("currentUser")).add({
+        ref:'calendar',
+        id: `a${(Math.random()*1000)}`, // Event's ID (required)
+            name: "You meditated", // Event name (required)
             date: `${months[today.getMonth()]}/${today.getDate()}/${today.getFullYear()}`, // Event date (required)
             type: "holiday", // Event type (required)
-            everyYear: true // Same event every year (optional)
-        }
-
-    );
-console.log("Harman noob");
+            everyYear: false // Same event every year (optional)
     })
+console.log("Harman noob");
+    }
+
+
+    db.collection(localStorage.getItem("currentUser")).where('ref','==','calendar').onSnapshot(function(querySnapshot){
+        querySnapshot.docChanges().forEach(function(change){
+            if(change.type=="added")
+            {
+                $('#calendar').evoCalendar(
+                    'addCalendarEvent', {
+                        id: change.doc.data().id, // Event's ID (required)
+                        name: change.doc.data().name, // Event name (required)
+                         date: change.doc.data().date, // Event date (required)
+                        type: change.doc.data().type, // Event type (required)
+                         everyYear: false // Same event every year (optional)
+                    }
+            
+                );
+            }
+        })
+    })
+    document.getElementById("username").innerHTML = localStorage.getItem("currUserName");
+   
