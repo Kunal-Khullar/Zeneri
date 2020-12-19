@@ -1,9 +1,3 @@
-
-  
-
-
-
-
 var firebaseConfig = {
     apiKey: "AIzaSyANc8RwR1HN9DK7LpX_n1tE1RRcEzpjvn8",
     authDomain: "zeneri.firebaseapp.com",
@@ -149,8 +143,7 @@ const entrydo = function(){
     }
     db.collection(localStorage.getItem("currentUser")).add({
         content: mv,
-        date: `${aaj.getDate()+"/"+m+"/"+aaj.getFullYear()}`,
-        time: `${ti+":"+aaj.getMinutes()+" "+ ab}`
+        refer: Date.now()
     })
 }
 const read = async function(){
@@ -158,7 +151,7 @@ const read = async function(){
     document.querySelector("#carouselExampleIndicators").classList.remove('hide')
     document.querySelector("#car").classList.add('animate__animated')
     document.querySelector("#car").classList.add('animate__fadeIn')
-    await db.collection(localStorage.getItem("currentUser")).orderBy("date","asc").onSnapshot(function(querySnapshot){
+    await db.collection(localStorage.getItem("currentUser")).orderBy("refer","asc").onSnapshot(function(querySnapshot){
         querySnapshot.docChanges().forEach(function(change){
             if(change.type=="added"){
                 document.querySelector('.carousel-inner').innerHTML += `<div class='carousel-item'><div class='paper'><div class='pattern'><div class='content'>${change.doc.data().content}</div></div></div></div>`
@@ -207,5 +200,105 @@ console.log("Harman noob");
             }
         })
     })
-    document.getElementById("username").innerHTML = localStorage.getItem("currUserName");
-   
+
+    const weekdays = function(){
+
+        document.getElementById("p2").classList.add('animate__animated')
+        document.getElementById("p2").classList.add('animate__fadeOut')
+        document.getElementById("p2").classList.add('hide')
+    }
+    const weekends = function(){
+
+        document.getElementById("p1").classList.add('animate__animated')
+        document.getElementById("p1").classList.add('animate__fadeOut')
+        document.getElementById("p1").classList.add('hide')
+    }
+    function sendMail1() {
+        var tempPara = {
+            from_name: `${localStorage.getItem("currentUser")}`,
+            to_name: "Dr. Sameer Malhotra",
+        }
+        
+        emailjs.send("Gmail", "template_wyt17mf", tempPara).then(function(err) {
+            console.log("res.staus");
+        })
+    }
+    function sendMail2() {
+        var tempPara = {
+            from_name: `${localStorage.getItem("currUserName")}`,
+            to_name: "Dr. Manish Jain",
+        }
+    
+        emailjs.send("Gmail", "template_wyt17mf", tempPara).then(function(err) {
+            console.log("res.staus");
+        })
+    }
+    var varray = [];
+    db.collection("videos").orderBy("flag","asc").onSnapshot(function(querySnapshot){
+        querySnapshot.docChanges().forEach(function(change){
+            if(change.type="added")
+            {
+                varray.push(change.doc.data());
+                document.getElementById("medvid").innerHTML += `<div class='col mb-4'><div class='card'><video width="400" controls  poster=${varray[change.doc.data().flag-1].image} class="card-img-top"><source src=${varray[change.doc.data().flag-1].url} type='video/mp4'></video><div class='card-body'><h2 class='card-title'>${varray[change.doc.data().flag-1].content}</h2></div></div></div>`
+            }
+        })
+       
+    })
+    var yarray = [];
+    db.collection("Yoga videos").orderBy("flag","asc").onSnapshot(function(querySnapshot){
+        querySnapshot.docChanges().forEach(function(change){
+            if(change.type="added")
+            {
+                yarray.push(change.doc.data());
+                document.getElementById("yogavid").innerHTML += `<div class='col mb-4'><div class='card'><video width="400" controls  poster=${yarray[change.doc.data().flag-1].image} class="card-img-top"><source src=${yarray[change.doc.data().flag-1].url} type='video/mp4'></video><div class='card-body'><h2 class='card-title'>${yarray[change.doc.data().flag-1].content}</h2></div></div></div>`
+            }
+        })
+       
+    })
+
+   var g = 0,h = 0,l = 0;
+   var gana1 = document.getElementById("song1");
+   const ps1 = function(){
+        if(g==0)
+        {
+            gana1.play();
+            document.getElementById("s1").classList.replace('fa-play-circle','fa-pause-circle');
+            g=1;
+        }
+        else
+        {
+            gana1.pause();
+            document.getElementById("s1").classList.replace('fa-pause-circle','fa-play-circle');
+            g=0;
+        }
+   }
+   var gana2 = document.getElementById("song2");
+   const ps2 = function(){
+        if(h==0)
+        {
+            gana2.play();
+            document.getElementById("s2").classList.replace('fa-play-circle','fa-pause-circle');
+            h=1;
+        }
+        else
+        {
+            gana2.pause();
+            document.getElementById("s2").classList.replace('fa-pause-circle','fa-play-circle');
+            h=0;
+        }
+   }
+   var gana3 = document.getElementById("song3");
+   const ps3 = function(){
+        if(l==0)
+        {
+            gana3.play();
+            document.getElementById("s3").classList.replace('fa-play-circle','fa-pause-circle');
+            l=1;
+        }
+        else
+        {
+            gana3.pause();
+            document.getElementById("s3").classList.replace('fa-pause-circle','fa-play-circle');
+            l=0;
+        }
+   }

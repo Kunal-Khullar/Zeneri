@@ -312,13 +312,17 @@ img {
     background-color: #E7E7E7;
     font-family: Helvetica, Arial, sans-serif
 }
-
+.m1{
+	font-weight: bolder;
+    font-size: 15px;
+    padding-top: 1%;
+}
 footer {
     text-align: center;
     background-color: #555;
     color: #ddd;
     padding: 5px;
-    margin-top: 50px;
+   
 }
 
 #wheelDiv {
@@ -391,7 +395,17 @@ h1 {
     color: #ffffff;
     font-size: 16px;
 }
-
+.featurette-heading
+{
+	font-size: 20px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+.lead
+{
+	font-weight: bold;
+	font-size: 16px;
+}
 .icon-w3 {
     display: inline-block;
     position: absolute;
@@ -609,7 +623,8 @@ ul {
 }
 
 .navbar {
-    background: #123;
+    background-color: #b7967bba;
+
 }
 
 .nav-item {
