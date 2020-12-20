@@ -256,7 +256,7 @@ console.log("Harman noob");
        
     })
 
-   var g = 0,h = 0,l = 0;
+   var g = 0,h = 0,l = 0,m=0,n=0;
    var gana1 = document.getElementById("song1");
    const ps1 = function(){
         if(g==0)
@@ -300,5 +300,35 @@ console.log("Harman noob");
             gana3.pause();
             document.getElementById("s3").classList.replace('fa-pause-circle','fa-play-circle');
             l=0;
+        }
+   }
+   var gana4 = document.getElementById("music1");
+   const ps4 = function(){
+        if(m==0)
+        {
+            gana4.play();
+            document.getElementById("podplay1").classList.replace('fa-play-circle','fa-pause-circle');
+            m=1;
+        }
+        else
+        {
+            gana4.pause();
+            document.getElementById("podplay1").classList.replace('fa-pause-circle','fa-play-circle');
+            m=0;
+        }
+   }
+   var gana5 = document.getElementById("music2");
+   const ps5 = function(){
+        if(n==0)
+        {
+            gana5.play();
+            document.getElementById("podplay2").classList.replace('fa-play-circle','fa-pause-circle');
+            n=1;
+        }
+        else
+        {
+            gana5.pause();
+            document.getElementById("podplay2").classList.replace('fa-pause-circle','fa-play-circle');
+            n=0;
         }
    }
