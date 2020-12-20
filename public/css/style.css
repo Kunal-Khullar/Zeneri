@@ -314,9 +314,11 @@ img {
 }
 .m1{
 	font-weight: bolder;
-    font-size: 15px;
-    padding-top: 1%;
+    font-size: 20px;
+    padding-top: 3%;
+    font-family: math;
 }
+
 footer {
     text-align: center;
     background-color: #555;
