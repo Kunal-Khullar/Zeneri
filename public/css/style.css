@@ -237,12 +237,15 @@ img {
 /*--main-content-starts-here--*/
 
 #indexbody {
-    font-family: 'Open Sans', sans-serif;
     width: 100%;
     background: #fff;
     object-fit: fill;
-    background: url("https://cdn.discordapp.com/attachments/788738430888181823/789750134640082944/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg") no-repeat center center fixed;
+    background: url("https://images.unsplash.com/photo-1586206589146-7aa5cf329548?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat center center fixed;
     background-size: cover;
+}
+
+#indexbody h1 {
+    font-family: 'Lora', serif;
 }
 
 .trans {
@@ -261,9 +264,15 @@ img {
 }
 
 .top-head {
-    background: url("https://images.unsplash.com/photo-1523882505971-5c29b55b695c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") no-repeat center center fixed;
+    background: url("https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bWVkaXRhdGlvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed;
     background-size: cover;
     height: 600px;
+    padding: 15px 20px;
+}
+
+.top-head h1,
+.top-head h4 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .col-md-6 {
@@ -289,14 +298,14 @@ img {
     height: 350px;
     background: url("https://static.medmonks.com/home/img/doctors/1548737264.jpeg");
     background-size: cover;
-    border-radius: 10px;
+    border-bottom-right-radius: 71% 25%;
 }
 
 #photo2 {
     height: 350px;
     background: url("https://static.medmonks.com/home/img/doctors/1548678293.jpeg");
     background-size: cover;
-    border-radius: 10px;
+    border-bottom-right-radius: 71% 25%;
 }
 
 .expertinfo {
@@ -312,8 +321,9 @@ img {
     background-color: #E7E7E7;
     font-family: Helvetica, Arial, sans-serif
 }
-.m1{
-	font-weight: bolder;
+
+.m1 {
+    font-weight: bolder;
     font-size: 20px;
     padding-top: 3%;
     font-family: math;
@@ -324,7 +334,7 @@ footer {
     background-color: #555;
     color: #ddd;
     padding: 5px;
-   font-size: 30px;
+    font-size: 30px;
 }
 
 #wheelDiv {
@@ -362,8 +372,10 @@ h6 {
 }
 
 .main-agileits {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
+    font-size: 1.6rem;
+    color: #f8a065;
 }
 
 .form-w3-agile h2 {
@@ -397,17 +409,18 @@ h1 {
     color: #ffffff;
     font-size: 16px;
 }
-.featurette-heading
-{
-	font-size: 20px;
-	padding-top: 1%;
-	padding-bottom: 1%;
+
+.featurette-heading {
+    font-size: 20px;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
-.lead
-{
-	font-weight: bold;
-	font-size: 16px;
+
+.lead {
+    font-weight: bold;
+    font-size: 16px;
 }
+
 .icon-w3 {
     display: inline-block;
     position: absolute;
@@ -475,13 +488,17 @@ button {
 }
 
 button {
-    background: #df5799;
+    background: #eca296;
     color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 2px;
+    text-transform: none;
     transition: 0.3s all;
     -webkit-transition: 0.3s all;
     -moz-transition: 0.3s all;
     -o-transition: 0.3s all;
     -ms-transition: 0.3s all;
+    margin-bottom: 2px;
 }
 
 .p-bottom-w3ls {
@@ -626,7 +643,6 @@ ul {
 
 .navbar {
     background-color: #b7967bba;
-
 }
 
 .nav-item {
@@ -634,22 +650,23 @@ ul {
 }
 
 .c1 {
-    font-size: 18px;
+    font-size: 19px;
     color: #222;
     text-align: justify;
     padding: 2%;
-    font-family: cursive;
+    font-family: emoji;
+    line-height: 25px;
 }
 
 .c2 {
-    font-family: cursive;
-    font-size: 40px;
+    font-family: none;
+    font-size: 45px;
     text-align: center;
     padding-top: 3%;
 }
 
 .c3 {
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     text-align: center;
     margin: 0% auto;
@@ -660,15 +677,16 @@ ul {
 }
 
 .bot-head {
-    background: #888;
+    background: #9f5f806e;
 }
 
 #btnop {
     margin-top: 0;
-    border-radius: 50px;
-    font-size: 30px;
-    font-weight: bolder;
-    font-family: cursive;
+    border-radius: 9px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #9f5f80;
 }
 
 #btn2 {
@@ -680,15 +698,15 @@ ul {
 
 #welcome {
     font-size: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #wquote {
     text-align: center;
-    color: #114;
+    color: #ffba93;
     font-size: 50px;
     filter: opacity(0.7);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 
@@ -701,10 +719,13 @@ ul {
 }
 
 .write {
-    margin-top: 8%;
+    /* margin-top: 8%; */
     justify-content: center;
     text-align: center;
     padding: 3%;
+    background: url("https://images.unsplash.com/photo-1590923607854-f28411215cf3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat center center fixed;
+    background-size: cover;
+    color: #ffba93;
 }
 
 * {
@@ -714,7 +735,11 @@ ul {
 
 .cal {
     padding: 2%;
-    background: #123;
+    background: #f9e2d9;
+}
+
+#read_j {
+    margin-bottom: 0;
 }
 
 .saman {
@@ -739,7 +764,7 @@ ul {
 .typewriter h1 {
     font-size: 60px;
     font-family: 'Piazollo';
-    color: #114;
+    color: #fefefe;
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
     border-right: .15em solid transparent;
@@ -1001,8 +1026,8 @@ nav ul li a {
 }
 
 .vedios {
-	background-color: #9f5f805e;
-	padding-bottom: 5%;
+    background-color: #9f5f805e;
+    padding-bottom: 5%;
 }
 
 .vedios .card {
@@ -1062,9 +1087,6 @@ nav ul li a {
         margin: 40px 0;
         word-spacing: 3px;
     }
-    .main-agileits {
-        width: 37%;
-    }
     .copyright p {
         margin: 40px 0px;
     }
@@ -1108,7 +1130,18 @@ nav ul li a {
         margin-top: 0.8em;
     }
     .main-agileits {
-        width: 39%;
+        margin: 0 auto;
+        font-size: 1.6rem;
+        color: #353230;
+        text-align: center;
+        line-height: 22px;
+        text-transform: capitalize;
+    }
+    #exampleInputEmail1,
+    #exampleInputEmail2,
+    #exampleInputPassword1,
+    #exampleInputPassword2 {
+        color: whitesmoke;
     }
     #small-dialog,
     #small-dialog1,
@@ -1117,12 +1150,6 @@ nav ul li a {
     }
     .contact-w3-agileits h3 {
         font-size: 19px;
-    }
-}
-
-@media(max-width:1080px) {
-    .main-agileits {
-        width: 47%;
     }
 }
 
@@ -1578,5 +1605,13 @@ nav ul li a {
     }
 }
 
-
+#webdes
+{
+	margin: 0 auto;
+    font-size: 1.6rem;
+    color: #353230;
+    text-align: center;
+    line-height: 22px;
+    text-transform: capitalize;
+}
 /*--responsive-design-ends-here--*/
